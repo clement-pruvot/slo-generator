@@ -112,9 +112,9 @@ class DatadogBackend:
         """
         slo_id = slo_config['backend']['measurement']['slo_id']
         from_ts = timestamp - window
-        slo_data = self.client.ServiceLevelObjective.get(id=slo_id)
-        LOGGER.debug(
-            f"SLO data: {slo_id} | Result: {pprint.pformat(slo_data)}")
+        #slo_data = self.client.ServiceLevelObjective.get(id=slo_id)
+        #LOGGER.debug(
+        #    f"SLO data: {slo_id} | Result: {pprint.pformat(slo_data)}")
         try:
             data = self.client.ServiceLevelObjective.history(id=slo_id,
                                                              from_ts=from_ts,
